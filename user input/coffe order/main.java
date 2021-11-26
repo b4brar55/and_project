@@ -7,37 +7,31 @@ import android.widget.TextView;
 import java.text.NumberFormat;
 
 public class MainActivity extends Activity { 
-	int total =0;
+	int quantity =0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 	}
 	public void plusBtn(View view) {
-		total = total + 1;
-		display(total);
+		quantity = quantity + 1;
+		displayQuantity(quantity);
 	} 
 	public void minusBtn(View view) {
-		total = total - 1;
-		display(total);
-	} 
-	public void order(View view) {
-		//display(total);
-		//displayPrice(total * 5);
-		String myMsg = "Total $" + total*5 + "\nThsnks";
-		displayMsg(myMsg);
+		quantity = quantity - 1;
+		displayQuantity(quantity);
 	}
-	private void displayMsg(String abc) {
-		TextView msgTextView = (TextView) findViewById(R.id.price_text_view);
-		msgTextView.setText(abc);
+	public void orderBtn(View view) {
+		displayPrice(quantity*5);
+		
 	}
-	private void display(int numbers) {
-		TextView quantity = (TextView) findViewById(R.id.quantity);
+	private void displayPrice(int numbers) {
+		TextView priceView = (TextView) findViewById(R.id.price_text_view);
+		priceView.setText(" " + numbers);
+	}
+	private void displayQuantity(int numbers) {
+		TextView quantity = (TextView) findViewById(R.id.quantity_text_view);
 		quantity.setText(" " + numbers);
-	}/*
-	private void displayPrice(int number) {
-		TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-		priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
-	}*/
-
+	}
+	
 }
