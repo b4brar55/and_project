@@ -1,0 +1,20 @@
+ArrayList<Word> words = new ArrayList<Word>();
+		  words.add(new Word("Donut", "1.6"));
+		  words.add(new Word("Eclair", "2.0-2.1"));
+		  words.add(new Word("Froyo", "2.2-2.2.3"));
+		  words.add(new Word("GingerBread", "2.3-2.3.7"));
+		  words.add(new Word("Honeycomb", "3.0-3.2.6"));
+		  words.add(new Word("Ice Cream Sandwich", "4.0-4.0.4"));
+		  words.add(new Word("Jelly Bean", "4.1-4.3.1"));
+		  words.add(new Word("KitKat", "4.4-4.4.4"));
+		  words.add(new Word("Lollipop", "5.0-5.1.1"));
+		  words.add(new Word("Marshmallow", "6.0-6.0"));
+
+		  // Create an {@link AndroidFlavorAdapter}, whose data source is a list of
+		  // {@link AndroidFlavor}s. The adapter knows how to create list item views for each item
+		  // in the list.
+		  WordAdapter Adapter = new WordAdapter(this, words);
+
+		  // Get a reference to the ListView, and attach the adapter to the listView.
+		  ListView listView = (ListView) findViewById(R.id.list);
+		  listView.setAdapter(Adapter);
